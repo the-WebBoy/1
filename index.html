@@ -22,36 +22,36 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px; /* Reduced padding for mobile */
         }
 
         /* Header Styling */
         header {
             text-align: center;
-            padding: 60px 0;
+            padding: 40px 0; /* Reduced padding */
             background: linear-gradient(45deg, #00ffcc20, #ff00ff20);
             border-bottom: 2px solid #00ffcc;
             animation: glitch 2s linear infinite;
         }
 
         .name {
-            font-size: 3em;
+            font-size: 2em; /* Smaller base size */
             text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 3px; /* Reduced letter spacing */
             color: #fff;
-            text-shadow: 0 0 10px #00ffcc;
+            text-shadow: 0 0 8px #00ffcc;
         }
 
         .title {
-            font-size: 1.5em;
+            font-size: 1.2em; /* Smaller title */
             color: #ff00ff;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         /* Section Styling */
         section {
-            margin: 40px 0;
-            padding: 20px;
+            margin: 30px 0; /* Reduced margin */
+            padding: 15px; /* Reduced padding */
             background: rgba(10, 10, 10, 0.8);
             border: 1px solid #00ffcc;
             border-radius: 5px;
@@ -60,22 +60,23 @@
 
         section h2 {
             color: #ff00ff;
-            font-size: 1.8em;
-            margin-bottom: 20px;
+            font-size: 1.5em; /* Smaller heading */
+            margin-bottom: 15px;
             text-shadow: 0 0 5px #ff00ff;
         }
 
         .skill-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller min width */
+            gap: 15px; /* Reduced gap */
         }
 
         .skill-item {
-            padding: 15px;
+            padding: 10px; /* Reduced padding */
             background: #1a1a1a;
             border: 1px solid #00ffcc;
             transition: all 0.3s ease;
+            font-size: 0.9em; /* Smaller text */
         }
 
         .skill-item:hover {
@@ -85,15 +86,9 @@
 
         /* Animations */
         @keyframes glitch {
-            2%, 64% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            4%, 60% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            62% {
-                transform: translate(0, 0) skew(5deg);
-            }
+            2%, 64% { transform: translate(2px, 0) skew(0deg); }
+            4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+            62% { transform: translate(0, 0) skew(5deg); }
         }
 
         .typing {
@@ -108,7 +103,6 @@
             to { width: 100% }
         }
 
-        /* Neon Lines */
         .neon-line {
             position: absolute;
             width: 100%;
@@ -123,11 +117,77 @@
             50% { opacity: 0.8; }
             100% { opacity: 0.2; }
         }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 30px 0;
+            }
+
+            .name {
+                font-size: 1.8em;
+                letter-spacing: 2px;
+            }
+
+            .title {
+                font-size: 1em;
+                white-space: normal; /* Allow wrapping */
+            }
+
+            section {
+                margin: 20px 0;
+                padding: 10px;
+            }
+
+            section h2 {
+                font-size: 1.3em;
+            }
+
+            .skill-grid {
+                grid-template-columns: 1fr; /* Single column on small screens */
+                gap: 10px;
+            }
+
+            .skill-item {
+                padding: 8px;
+                font-size: 0.85em;
+            }
+
+            p {
+                font-size: 0.9em; /* Smaller text for readability */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name {
+                font-size: 1.5em;
+            }
+
+            .title {
+                font-size: 0.9em;
+            }
+
+            section h2 {
+                font-size: 1.2em;
+            }
+
+            .skill-item {
+                font-size: 0.8em;
+            }
+
+            p {
+                font-size: 0.85em;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="name">SHAHEEM ULLATTIL</div>
+        <div class="name">The.WebBoy</div>
         <div class="title typing">Ethical Hacker | Cybersecurity Expert</div>
     </header>
 
@@ -162,14 +222,13 @@
 
         <section id="contact">
             <h2>>> Contact</h2>
-            <p>Email: SHAHEEM@domain.com]</p>
+            <p>Email: SHAHEEM@domain.com</p>
             <p>LinkedIn: linkedin.com/in/yourprofile</p>
             <p>Certifications: CEH, OSCP</p>
         </section>
     </div>
 
     <script>
-        // Add dynamic glitch effect on hover
         document.querySelector('header').addEventListener('mouseover', () => {
             document.querySelector('.name').style.animation = 'glitch 0.5s linear infinite';
         });
